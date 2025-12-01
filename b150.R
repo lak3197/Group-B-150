@@ -65,6 +65,12 @@ summary_stats <- data.frame(
 
 print(summary_stats)
 
+#Independent samples t-test Sports vs Other
+t_test_result <- t.test(global_sales ~ genre_group,
+                        data = video_games_sales,
+                        var.equal = FALSE)   # Welch t-test
+
+print(t_test_result)
 
 
 
