@@ -37,6 +37,16 @@ boxplot(global_sales ~ genre_group,
 
 dev.off()
 
+#Save the Histogram as image
+png("hist_global_sales.png", width = 800, height = 600)
+
+hist(video_games_sales$global_sales,
+     breaks = 30,
+     main = "Distribution of Global Video Game Sales",
+     xlab = "Global Sales (millions)")
+
+dev.off()
+
 
 
 
