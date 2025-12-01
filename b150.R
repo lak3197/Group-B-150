@@ -1,5 +1,17 @@
 View(video_games_sales)
 
+#Clean the data and keep the needed variables
 video_games_sales <- video_games_sales[, c("genre", "global_sales")]
 video_games_sales <- na.omit(video_games_sales)
+
+#Create Sports vs Other groups
+video_games_sales$genre_group <- ifelse(video_games_sales$genre == "Sports",
+                                        "Sports",
+                                        "Other")
+
+video_games_sales$genre_group <- factor(video_games_sales$genre_group,
+                                        levels = c("Sports", "Other"))
+
+
+
 
