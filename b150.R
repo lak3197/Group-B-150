@@ -13,5 +13,11 @@ video_games_sales$genre_group <- factor(video_games_sales$genre_group,
                                         levels = c("Sports", "Other"))
 
 
+#Boxplot
+boxplot(global_sales ~ genre_group,
+        data = video_games_sales,
+        main = "Global Sales: Sports vs Other Genres",
+        xlab = "Genre Group",
+        ylab = "Global Sales (millions)")
 
 
