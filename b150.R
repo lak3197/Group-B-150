@@ -47,6 +47,25 @@ hist(video_games_sales$global_sales,
 
 dev.off()
 
+#Summary statistics for Sports vs Other
+group_counts <- table(video_games_sales$genre_group)
+group_means  <- tapply(video_games_sales$global_sales,
+                       video_games_sales$genre_group,
+                       mean)
+group_sds    <- tapply(video_games_sales$global_sales,
+                       video_games_sales$genre_group,
+                       sd)
+
+summary_stats <- data.frame(
+  genre_group = names(group_counts),
+  count       = as.numeric(group_counts),
+  mean        = as.numeric(group_means),
+  sd          = as.numeric(group_sds)
+)
+
+print(summary_stats)
+
+
 
 
 
