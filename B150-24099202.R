@@ -75,6 +75,15 @@ t_test_result <- t.test(global_sales ~ genre_group,
 
 print(t_test_result)
 
+# Normality Test for Sports
+sports_only <- subset(video_games_sales, genre_group == "Sports")$global_sales
+shapiro.test(sports_only)
+
+# Normality Test for Other
+other_only <- subset(video_games_sales, genre_group == "Other")$global_sales
+shapiro.test(other_only)
+
+
 
 
 
