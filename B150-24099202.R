@@ -83,7 +83,17 @@ shapiro.test(sports_only)
 other_only <- subset(video_games_sales, genre_group == "Other")$global_sales
 shapiro.test(other_only)
 
+# Convert category to numeric for scatterplot
+video_games_sales$genre_numeric <- ifelse(video_games_sales$genre_group == "Sports", 1, 2)
 
+# Scatterplot
+plot(video_games_sales$genre_numeric,
+     video_games_sales$global_sales,
+     main = "Scatterplot of Global Sales: Sports vs Other",
+     xlab = "Genre Group (1 = Sports, 2 = Other)",
+     ylab = "Global Sales (millions)",
+     col = ifelse(video_games_sales$genre_group == "Sports", "blue", "red"),
+     pch = 16)
 
 
 
