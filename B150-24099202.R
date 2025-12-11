@@ -1,3 +1,6 @@
+# To reproduce: from project root run in R: 
+# install.packages(c("tidyverse","broom","ggpubr","readr")) 
+# source("scripts/Analysis.R") 
 View(video_games_sales)
 
 #Clean the data and keep the needed variables
